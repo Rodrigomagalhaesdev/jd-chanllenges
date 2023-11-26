@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rodrigo Dev</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+   <main class="container">
+    <div class="container-loading">
+        <i class="fa-solid fa-spinner loading"></i>
+        <span class="loading-text">Salvando  os seus dados...</span>
+    </div>
+    <section class="form-content">
+        <header class="title-form">
+            Formulario
+        </header>
+        <form>
+            <div class="input-group"> 
+                <input type="text" name="name" class="required" id="name" placeholder="Nome completo" oninput="nameValidate()">
+                <span class="data-required">Seu nome deve conter pelo menos 6 caracteres</span>
+            </div>
+            <div class="input-group">
+                <input type="email" name="email" class="required" id="email" placeholder="Seu email principal" oninput="emailValidate()">
+                <span class="data-required">Digite um email válido. ex: ar@mail.com </span>
+            </div>
+            <div class="input-group pass-group">
+                <input type="password" name="password" class="required" id="password" placeholder="Sua senha" oninput="passwordValidate()">
+                <i class="fa-solid fa-eye-slash eye-icon"></i>
+                <span class="data-required">Sua senha deve conter pelo menos 6 caracteres..</span>
+            </div>
+            <div class="input-group btn-container">
+                <button id="confirm-modal" class="btn-submit">Cadastrar</button>
+            </div>
+        </form>
+    </section>
+
+    <div class="hide" id="fade"></div>
+    <div class="hide" id="modal">
+        <div class="icon-container">
+            <i class="fa-solid fa-check check-modal"></i>
+        </div>
+        <h1 class="modal-submit" id="modal-header"></h1>
+        <p class="modal-text" id="modal-text-name">Obrigado por estar conosco. </p>
+        <button class="btn-close-modal" id="close-modal">Fechar</button>
+    </div>
+   </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

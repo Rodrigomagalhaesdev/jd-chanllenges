@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(190deg, #decba4, #e62dec, #9d8fdb, #9fd5e2);
+  background-size: 400% 400%;
+  animation: gradient 15s ease-out infinite;
+  position: relative;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container-loading {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  transition: 0.5s ease-out;
+}
+
+.fa-spinner {
+  color: #f1f1f1;
+  font-size: 62px;
+  padding: 10px;
+  animation: loadingForm 0.8s linear infinite;
+}
+
+@keyframes loadingForm {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #f1f1f1;
+}
+
+
+
+.form-content {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: rgba(200, 176, 236, 0.6) 0px 7px 29px 0px;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 22px;
+}
+
+.form-content .title-form {
+  text-align: center;
+  font-weight: bold;
+  color: #39008e;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  background: #e5e5e5;
+  color: #535353;
+  border-radius: 6px;
+  padding: 12px;
+  transition: 0.5s ease-out;
+}
+
+.input-group input:hover {
+  border: 1px solid #6503e4;
+  box-shadow: rgba(149, 125, 253, 0.5) 0px 7px 29px 0px;
+}
+
+.input-group .btn-submit {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: linear-gradient(to bottom left, #6400e5, #111ff0);
+  border-radius: 8px;
+  color: #f1f1f1;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+}
+
+.input-group .btn-submit:hover {
+  border: 1px solid #191919;
+  color: #191919;
+  background: transparent;
+}
+
+.data-required {
+  display: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: #db2b00;
+  margin: 3px 0 0 1px;
+  transition: 0.5s ease-out;
+}
+
+.pass-group {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  margin: 12px;
+  outline: none;
+  align-content: center;
+  color: #969696;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.eye-icon:hover {
+  color: #6400e5;
+}
+
+#fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+#modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: min-content;
+  max-width: 90%;
+  background-color: #f1f1f1;
+  padding: 1.2em;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+#modal-header {
+  font-size: 24px;
+  font-weight: 600;
+  color: #616161;
+  text-align: start;
+  margin-top: 0.4em;
+}
+
+.modal-text {
+  font-size: 14px;
+  color: #6e6e6e;
+  text-align: start;
+}
+
+.btn-close-modal {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: linear-gradient(to bottom left, #2ab213, #88c86a);
+  border-radius: 8px;
+  color: #f1f1f1;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+}
+
+.btn-close-modal:hover {
+    background: #191919;
+}
+
+.check-modal {
+  position: relative;
+  top:20%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  margin-top: -20px;
+  width:50px;
+  height: 50px;
+  background: #1ba709;
+  box-shadow: rgba(0,0,0,0.4) 0px 7px 29px 0px;
+  padding: 14px;
+  border-radius: 50%;
+  color: #f1f1f1;
+}
+
+#fade, #modal {
+  transition: 0.5s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+#modal.hide, #fade.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#mdoal.hide {
+  top: 0;
+}
