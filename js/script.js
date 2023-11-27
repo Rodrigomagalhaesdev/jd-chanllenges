@@ -71,7 +71,7 @@ const toggleModal = () => {
   }, 2000);
 };
 
-const checkModal = [closeModalBtn, fade].map((element) => {
+const checkModal = [closeModalBtn, fade].forEach((element) => {
   element.addEventListener("click", () => toggleModal());
 });
 
